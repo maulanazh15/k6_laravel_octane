@@ -1,7 +1,6 @@
 import http from 'k6/http';
 import { AppConfig } from './config.ts';
 import { check, sleep } from 'k6';
-import { scenario } from 'k6/execution';
 
 // export const options = {
 //   thresholds : AppConfig.thresholds,

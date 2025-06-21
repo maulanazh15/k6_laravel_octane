@@ -1,0 +1,1 @@
+set K6_WEB_DASHBOARD=true ; set K6_WEB_DASHBOARD_EXPORT=.\reports\html\smoke-report.html ; k6 run --out json=.\reports\dist\smoke-report.json .\nginx-php-fpm\smoke-testing.ts

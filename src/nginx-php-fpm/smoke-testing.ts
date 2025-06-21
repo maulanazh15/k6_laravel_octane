@@ -4,7 +4,7 @@ import { AppConfig } from './config.ts';
 
 export const options = {
   vus: 10,
-  duration: '30s',
+  duration: '60s',
 };
 
 export default function() {
