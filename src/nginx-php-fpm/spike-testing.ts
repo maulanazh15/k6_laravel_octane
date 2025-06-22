@@ -3,15 +3,19 @@ import { AppConfig } from './config.ts';
 import { check } from 'k6';
 
 export const options = {
-  stages: [
-    { duration: '10s', target: 0 },
-    { duration: '10s', target: 500 },
-    { duration: '30s', target: 1000 },
-    { duration: '10s', target: 0 },
-  ],
+  thresholds: AppConfig.thresholds,
+  scenarios: {
+    spike_scenario: {
+      executor: 'ramping-vus', //Assure user load increase if the system slows
+      stages: [
+        { duration: '7m', target: 900 }, // ramp-up
+        { duration: '3m', target: 0 }, // steady load
+      ],
+    }
+  }
 };
 
 export default function () {
   let res = http.get(`${AppConfig.host}`);
-    check(res, { "status is 200": (res) => res.status === 200 });
+  check(res, { "status is 200": (res) => res.status === 200 });
 }

@@ -10,12 +10,11 @@ export const options = {
       stages: [
         { duration: '2h', target: 20000 },
       ],
-    }
+    },
   }
 };
 
 export default function () {
   let res = http.get(`${AppConfig.host}`);
   check(res, { "status is 200": (res) => res.status === 200 });
-  sleep(1);
 }

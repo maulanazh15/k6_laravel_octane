@@ -13,7 +13,7 @@ export const options = {
         { duration: '40m', target: 600 }, // steady load
         { duration: '10m', target: 0 },  // ramp-down
       ],
-    }
+    },
   }
 };
 
