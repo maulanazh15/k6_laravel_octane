@@ -10,5 +10,4 @@ export const options = {
 export default function() {
   let res = http.get(`${AppConfig.host}`);
   check(res, { "status is 200": (res) => res.status === 200 });
-  sleep(1);
 }
